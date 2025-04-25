@@ -43,10 +43,11 @@ Coming soon!
 
 ![Example Demo](./assets/example_demo.gif)
 
-<figure class="video_container">
-  <iframe src="./assets/demo.mp4" frameborder="0" allowfullscreen="true"> 
-</iframe>
-</figure>
+
+
+https://github.com/user-attachments/assets/defd51d5-bf09-4e75-beb7-1553c1c124ac
+
+
 
 ## 📂 Installation
 
