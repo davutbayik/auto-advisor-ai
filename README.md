@@ -41,6 +41,8 @@ Coming soon!
 
 ## 🎥 Example Demo
 
+![Example Demo](./assets/example_demo.gif)
+
 ## 📂 Installation
 
 1. Clone the repository:
