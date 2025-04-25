@@ -43,6 +43,8 @@ Coming soon!
 
 ![Example Demo](./assets/example_demo.gif)
 
+![Example Demo](./assets/example_demo.mp4)
+
 ## 📂 Installation
 
 1. Clone the repository:
