@@ -65,10 +65,10 @@ st.sidebar.info("❗ Use SerpAPI for enabling web search, hence expect better re
 os.environ["OPENAI_API_KEY"] = openai_key
 
 if serpapi_key:
-    st.sidebar.success("✅ SerpAPI Key is entered")
+    st.sidebar.success("✅ SerpAPI Key is entered!")
 
 if openai_key:
-    st.sidebar.success("✅ OpenAI API Key is entered")
+    st.sidebar.success("✅ OpenAI API Key is entered!")
         
     # --- LLM Configuration ---
     llm = ChatOpenAI(
