@@ -61,7 +61,7 @@ Coming soon!
 
 4. Run Streamlit app:
    ```bash
-   streamlit run autoadvisor_app.py
+   streamlit run main.py
 
 ## 🔑 Environment Variables
 
