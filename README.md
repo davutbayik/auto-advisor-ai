@@ -41,8 +41,6 @@ Coming soon!
 
 ## 🎥 Example Demo
 
-![Example Demo](./assets/example_demo.gif)
-
 
 
 https://github.com/user-attachments/assets/defd51d5-bf09-4e75-beb7-1553c1c124ac
