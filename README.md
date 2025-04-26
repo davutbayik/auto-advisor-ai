@@ -21,7 +21,7 @@ AutoAdvisor is an AI-powered business strategy assistant that helps users transf
 
 ## 🖥️ Live App
 
-[Try Live App](https://auto-advisor-ai-app.streamlit.app/)
+👉 [Live App](https://auto-advisor-ai-app.streamlit.app/)
 
 ## 🧩 Tech Stack
 
