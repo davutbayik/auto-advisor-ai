@@ -2,7 +2,7 @@
 
 AutoAdvisor is an AI-powered business strategy assistant that helps users transform raw business ideas into validated, actionable strategies using advanced language models and autonomous AI agents. It validates ideas, rephrases vague inputs, performs strategic analysis, and delivers a detailed final report including a SWOT analysis.
 
-![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.12-blue.svg)
 ![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-ff4b4b.svg)
 ![LangChain](https://img.shields.io/badge/LangChain-enabled-yellow)
 ![OpenAI](https://img.shields.io/badge/OpenAI-powered-000000.svg?logo=openai)
@@ -25,7 +25,7 @@ Coming soon!
 
 ## 🧩 Tech Stack
 
-- [Python](https://www.python.org/)
+- [Python 3.12](https://www.python.org/)
 - [Streamlit](https://streamlit.io/)
 - [LangChain](https://www.langchain.com/)
 - [OpenAI](https://platform.openai.com/)
