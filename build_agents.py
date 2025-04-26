@@ -84,7 +84,10 @@ def run_auto_advisor(user_idea: str, llm):
     agents = build_agents(llm)
     
     if os.getenv("SERPAPI_KEY"):
-        research = perform_web_search(user_idea)
+        try:
+            research = perform_web_search(user_idea)
+        except:
+            research = None
     else:
         research = None
 

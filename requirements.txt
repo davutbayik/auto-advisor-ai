@@ -7,3 +7,4 @@ serpapi==0.1.5
 markdown-pdf==1.7
 streamlit==1.44.1
 watchdog==6.0.0
+pysqlite3-binary
