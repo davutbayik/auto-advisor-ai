@@ -53,7 +53,7 @@ def stream_output(report):
         time.sleep(0.02)
 
 # --- Streamlit UI ---
-st.set_page_config(page_title="AutoAdvisor", page_icon="🧠")
+st.set_page_config(page_title="AutoAdvisor", page_icon="🧠", layout="wide")
 st.title("🧠 AutoAdvisor — Your AI Business Strategy Assistant")
 st.write("Enter a business idea below to generate a market-ready strategy report:")
 
