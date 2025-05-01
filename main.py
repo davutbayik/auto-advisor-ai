@@ -65,6 +65,15 @@ def stream_output(report):
 st.set_page_config(page_title="AutoAdvisor", page_icon="🧠", layout="wide")
 st.title("🧠 AutoAdvisor — Your AI Business Strategy Assistant")
 
+# Hide upper menu on the page
+st.markdown("""
+    <style>
+    /* Hide upper menu */
+    Main Menu {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}           
+    """, unsafe_allow_html=True)
+
 # Sidebar for configuration
 st.sidebar.header("🤖 Configuration")
     
