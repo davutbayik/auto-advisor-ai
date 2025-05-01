@@ -1,9 +1,8 @@
 langchain==0.3.24
-langchain_community==0.3.22
-langchain_openai==0.3.14
-crewai==0.114.0
+langchain_community==0.3.23
+langchain_openai==0.2.14
+crewai==0.118.0
+crewai_tools==0.43.0
 google-genai==1.2.0
-serpapi==0.1.5
 markdown-pdf==1.7
 streamlit==1.44.1
-watchdog==6.0.0

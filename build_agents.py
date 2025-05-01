@@ -1,9 +1,14 @@
 import os
 from crewai import Agent, Task, Crew
+from crewai_tools import SerperDevTool
 from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-import serpapi
+from langchain.agents import Tool
 
+# Initialize the tool for internet searching capabilities
+search_tool = SerperDevTool()
+
+'''
 # --- Web search utility function ---
 def perform_web_search(query: str) -> str:
     results = serpapi.search({
@@ -12,6 +17,7 @@ def perform_web_search(query: str) -> str:
     })
     top = results.get("organic_results", [])[:5]
     return "\n".join([f"{r['title']}: {r['link']}" for r in top])
+'''
 
 # --- Validating the business idea ---
 def validate_business_idea(user_input, llm):
@@ -38,6 +44,7 @@ def validate_business_idea(user_input, llm):
 def rephrase_business_idea(user_input, llm):
     prompt_template = """
     Rephrase the following input into a viable startup idea. 
+    Output only ONE idea that you think is the most appropriate one.
     If it's totally irrelevant or empty, write only 'INVALID'.
     
     Input: {idea}"
@@ -55,6 +62,14 @@ def rephrase_business_idea(user_input, llm):
 # --- Build Agents Crew ---
 def build_agents(llm):
     return {
+        "web_researcher": Agent(
+            role="Web Researcher",
+            goal="Find accurate and relevant information from the web",
+            backstory="An expert in internet research using advanced tools to extract insights.",
+            tools=[search_tool],
+            llm=llm,
+            verbose=False
+        ),
         "market_analyst": Agent(
             role="Market Analyst",
             goal="Analyze the market and summarize top competitors",
@@ -83,6 +98,7 @@ def run_auto_advisor(user_idea: str, llm):
     
     agents = build_agents(llm)
     
+    '''
     if os.getenv("SERPAPI_KEY"):
         try:
             research = perform_web_search(user_idea)
@@ -90,10 +106,23 @@ def run_auto_advisor(user_idea: str, llm):
             research = None
     else:
         research = None
+    '''
 
     tasks = [
         Task(
-            description=f"Analyze the market and competitors for '{user_idea}'. Use web search (if provided):\n{research}.",
+            description=f'''
+                Research the topic: '{user_idea}'.
+                Use web search tools *if helpful or available*, but it's not mandatory.
+                Focus on accuracy, recency, and relevance.
+                ''',
+            agent=agents["web_researcher"],
+            expected_output=f'''
+                A list or short summary of 3–5 key findings about the topic.
+                Summarize in your own words.
+                '''
+            ),
+        Task(
+            description=f"Analyze the market and competitors for '{user_idea}'. Use the web search *if available*.",
             agent=agents["market_analyst"],
             expected_output="Top 2–3 competitors, gaps, and industry trends."
         ),
@@ -105,7 +134,7 @@ def run_auto_advisor(user_idea: str, llm):
         Task(
             description=f"""
             You are the orchestrator. Combine:
-            1. Web research (if provided): {research}, 
+            1. Web research *if provided*, 
             2. Market analysis including major competitors from Market Analyst Agent
             3. SWOT analysis from SWOT Analyst Agent
 
@@ -113,11 +142,11 @@ def run_auto_advisor(user_idea: str, llm):
             - Executive summary
             - SWOT Analysis
             - Market insight
-            - Strategic recommendation
+            - Strategic recommendations
 
             Write the section header names as bold text.
             Write SWOT sub-headers as italic text and their content as bullet points.
-            Write 'SWOT Analysis' header and 'Strengths' sub-header to different lines
+            Do not include any thoughts etc. Just focus on the topic.
             """,
             agent=agents["orchestrator"],
             expected_output="Complete business strategy report with SWOT analysis."
