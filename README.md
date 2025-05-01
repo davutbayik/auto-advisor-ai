@@ -79,6 +79,7 @@ Create a `.env` file in the root directory with:
 
 ```
 OPENAI_API_KEY=your_openai_key
+SERPER_API_KEY=your_serperapi_key
 ```
 
 ## 📄 License
