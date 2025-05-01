@@ -69,12 +69,11 @@ if serpapi_key:
 
 if openai_key:
     st.sidebar.success("✅ OpenAI API Key is entered!")
-        
+
     # --- LLM Configuration ---
     llm = ChatOpenAI(
         model="gpt-4.1-mini", 
         temperature=0.5,
-        max_tokens=750,
         api_key=os.getenv("OPENAI_API_KEY")
     )
 
