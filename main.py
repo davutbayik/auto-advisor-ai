@@ -8,6 +8,9 @@ from build_agents import run_auto_advisor, validate_business_idea, rephrase_busi
 import warnings
 warnings.filterwarnings("ignore")
 
+os.environ["OPENAI_API_KEY"] = ""
+os.environ["SERPER_API_KEY"] = ""
+
 TEMPERATURE = 0.5
 LLM_MODELS = ["gpt-4.1", "gpt-4.1-mini", "gpt-4.1-nano", "gpt-4o-mini", "gpt-3.5-turbo"]
 
@@ -88,15 +91,16 @@ if llm_model:
         os.environ["OPENAI_API_KEY"] = openai_key
 
         st.write("Enter a business idea below to generate a market-ready strategy report:")
-        
-        # --- LLM Configuration ---
-        llm = ChatOpenAI(
-            model=llm_model, 
-            temperature=TEMPERATURE,
-            api_key=os.getenv("OPENAI_API_KEY")
-            )
 
         try:
+
+            # --- LLM Configuration ---
+            llm = ChatOpenAI(
+                model=llm_model, 
+                temperature=TEMPERATURE,
+                api_key=os.getenv("OPENAI_API_KEY")
+                )
+
             # --- Business Idea Input ---
             user_idea = st.text_area(
                 "💡 Enter your business idea", 
@@ -146,8 +150,8 @@ if llm_model:
                 st.info("⚠️ Please enter a business idea to proceed.")
             
         except Exception as e:
-            if "AuthenticationError" in str(e): # Raise error if invalid OPENAI API Key is entered
-                st.sidebar.warning("⚠️ Please check your OpenAI API key.")
+            if e.status_code == 401: # Raise error if invalid OPENAI API Key is entered
+                st.warning("⚠️ Please check your OpenAI API key.")        
     else:
         st.info("Enter OpenAI API Key and optionally a SerperAPI Key !")
 else:
