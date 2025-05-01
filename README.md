@@ -12,9 +12,11 @@ AutoAdvisor is an AI-powered business strategy assistant that helps users transf
 
 ## 🚀 Features
 
+- 🛠️ **Model Selection:** Select desired version of OpenAI's gpt models.
 - ✅ **LLM Validation:** Checks if the input is a valid business idea.
 - ♻️ **Auto-Correction:** Rephrases unclear or vague ideas into proper business concepts.
 - 🧠 **CrewAI Agent Workflow:** Uses specialized AI agents to analyze ideas and generate strategic insights.
+- 🔍 **Live Web Search:** AI Agents uses real time web search for better outcome using SerperAPI.
 - 📊 **SWOT Analysis:** Includes strengths, weaknesses, opportunities, and threats.
 - 📄 **PDF Export:** Unicode-compatible PDF generation for offline viewing.
 - 🌐 **Streamlit Web Interface:** Easy-to-use web app for business users and entrepreneurs.
@@ -30,13 +32,15 @@ AutoAdvisor is an AI-powered business strategy assistant that helps users transf
 - [LangChain](https://www.langchain.com/)
 - [OpenAI](https://platform.openai.com/)
 - [CrewAI](https://github.com/joaomdmoura/crewAI)
+- [SerperAPI](https://serper.dev/)
 
 ## 🧪 How It Works
 
+1. Select a gpt model from OpenAI.
 1. User enters a business idea.
 2. LLM checks if it's valid.
 3. If invalid, AutoAdvisor tries to rephrase it.
-4. A team of AI agents performs market, product, and SWOT analysis.
+4. A team of AI agents performs web search, market, product, and SWOT analysis.
 5. A detailed report is generated and offered as downloadable PDF.
 
 ## 🎥 Example Demo
