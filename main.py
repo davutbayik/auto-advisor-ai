@@ -72,7 +72,7 @@ if openai_key:
         
     # --- LLM Configuration ---
     llm = ChatOpenAI(
-        model="gpt-3.5-turbo", 
+        model="gpt-4.1-mini", 
         temperature=0.5,
         max_tokens=750,
         api_key=os.getenv("OPENAI_API_KEY")
