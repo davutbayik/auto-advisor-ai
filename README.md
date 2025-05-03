@@ -51,7 +51,7 @@ https://github.com/user-attachments/assets/defd51d5-bf09-4e75-beb7-1553c1c124ac
 
 
 
-## 📂 Installation
+## 🛠️ Installation
 
 1. Clone the repository:
 
