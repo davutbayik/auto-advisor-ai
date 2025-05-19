@@ -46,9 +46,7 @@ AutoAdvisor is an AI-powered business strategy assistant that helps users transf
 ## 🎥 Example Demo
 
 
-
-https://github.com/user-attachments/assets/defd51d5-bf09-4e75-beb7-1553c1c124ac
-
+https://github.com/user-attachments/assets/16e29d5f-bd11-4e87-ad2c-92336a39d4b0
 
 
 ## 🛠️ Installation
